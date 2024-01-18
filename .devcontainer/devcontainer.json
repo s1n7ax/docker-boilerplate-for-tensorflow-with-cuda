@@ -1,0 +1,17 @@
+{
+  "name": "tensorflow",
+  "appPort": [
+    8888
+  ],
+  "build": {
+    "context": "..",
+    "dockerfile": "../Dockerfile"
+  },
+  "runArgs": [
+    "--gpus",
+    "all"
+  ],
+  "postStartCommand": {
+    "service": "bash -c 'jupyter-lab --allow-root --ip=0.0.0.0'"
+  }
+}
